@@ -32,3 +32,42 @@ a Halloween treat.
 • At the end of execution, Karel should return to its original intersection
 at the west end of the street, but should now be facing west.
 */
+
+import "turns";
+
+
+
+
+function  candyGrab(){
+	while(frontIsClear()){
+		move();
+		while(rightIsClear()){
+			turnRight();
+			move();
+			if(beepersPresent()){
+				pickBeeper();
+			}
+			turnAround();
+			move();
+			turnRight();
+			if(frontIsBlocked()){
+				turnAround();
+			}
+			move();
+		}
+	}
+}
+
+
+
+
+
+
+
+function Solve(){
+	candyGrab();
+	}
+
+
+
+
